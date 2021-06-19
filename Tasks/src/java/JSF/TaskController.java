@@ -6,6 +6,7 @@ import JSF.util.PaginationHelper;
 import Session.TaskFacade;
 
 import java.io.Serializable;
+import java.time.Clock;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -159,7 +160,8 @@ public class TaskController implements Serializable {
         }
         return items;
     }
-
+       
+    
     private void recreateModel() {
         items = null;
     }
