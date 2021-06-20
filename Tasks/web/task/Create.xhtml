@@ -14,8 +14,14 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
+            <h:form style="margin: auto;
+                    width: 25%;
+                    background-color: whitesmoke;
+                    border: 2px solid black;
+                    background-image: linear-gradient(to top left, #003366, #66b3ff);
+                    border-radius: 5px;
+                    padding: 10px;">
+                <h:panelGrid style="color: black" columns="2">
                     <h:outputLabel value="#{bundle.CreateTaskLabel_id}" for="id" />
                     <h:inputText id="id" value="#{taskController.selected.id}" title="#{bundle.CreateTaskTitle_id}" required="true" requiredMessage="#{bundle.CreateTaskRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateTaskLabel_titulo}" for="titulo" />
@@ -40,14 +46,27 @@
                         <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:inputText>
                 </h:panelGrid>
+                <div style="text-align: right">
                 <br />
-                <h:commandLink action="#{taskController.create}" value="#{bundle.CreateTaskSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{taskController.prepareList}" value="#{bundle.CreateTaskShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateTaskIndexLink}"/>
+                <button class="button">
+                <h:commandLink style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: green;" action="#{taskController.create}" value="#{bundle.CreateTaskSaveLink}" />
+                </button>
+                <button class="button">
+                <h:commandLink style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" action="#{taskController.prepareList}" value="#{bundle.CreateTaskShowAllLink}" immediate="true"/>
+                </button>
+                <button class="button">
+                <h:link style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" outcome="/index" value="#{bundle.CreateTaskIndexLink}"/>
+                </button>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

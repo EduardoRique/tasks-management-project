@@ -12,8 +12,14 @@
             <h:outputText value="#{bundle.ListTaskTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:form styleClass="jsfcrud_list_form">
-                
+            <h:form styleClass="jsfcrud_list_form" style="margin: auto;
+                    width: 90%;
+                    background-color: whitesmoke;
+                    border: 2px solid black;
+                    background-image: linear-gradient(to top left, #003366, #66b3ff);
+                    border-radius: 5px;
+                    padding: 10px;">
+                                
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -75,15 +81,26 @@
                             <h:outputText value=" "/>
                             <h:commandLink action="#{taskController.prepareEdit}" value="#{bundle.ListTaskEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{taskController.destroy}" value="#{bundle.ListTaskDestroyLink}"/>
+                            <p:commandLink action="#{taskController.destroy}" value="#{bundle.ListTaskDestroyLink}"/>
+                            
                         </p:column>
                     </p:dataTable>
                 </h:panelGroup>
-                <br />
-                <h:commandLink action="#{taskController.prepareCreate}" value="#{bundle.ListTaskCreateLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ListTaskIndexLink}"/>
+                <div style="text-align: right">
+                <br/>
+                <button class="button">
+                <h:commandLink style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" action="#{taskController.prepareCreate}" value="#{bundle.ListTaskCreateLink}"/>
+                </button>
+                <button class="button">
+                <h:link style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" outcome="/index" value="#{bundle.ListTaskIndexLink}"/>
+                </button>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

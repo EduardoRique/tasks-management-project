@@ -10,13 +10,22 @@
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
     </h:head>
 
-    <h:body>
-        <h1>
+    <h:body style="background-image: linear-gradient(to bottom right, #003366, #66b3ff);
+            height: 100%;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;">
+        <div>
+        <h1 style="text-align: center;
+            text-transform: uppercase;
+            color: black;">
             <ui:insert name="title">Default Title</ui:insert>
         </h1>
+        
         <p>
             <ui:insert name="body">Default Body</ui:insert>
         </p>
+        </div>
     </h:body>
 
 </html>

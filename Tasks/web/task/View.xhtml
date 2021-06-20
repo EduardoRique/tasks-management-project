@@ -13,8 +13,14 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
+            <h:form style="margin: auto;
+                    width: 25%;
+                    background-color: whitesmoke;
+                    border: 2px solid black;
+                    background-image: linear-gradient(to top left, #003366, #66b3ff);
+                    border-radius: 5px;
+                    padding: 10px;">
+                <h:panelGrid style="color: black" columns="2">
                     <h:outputText value="#{bundle.ViewTaskLabel_id}"/>
                     <h:outputText value="#{taskController.selected.id}" title="#{bundle.ViewTaskTitle_id}"/>
                     <h:outputText value="#{bundle.ViewTaskLabel_titulo}"/>
@@ -32,18 +38,41 @@
                         <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:outputText>
                 </h:panelGrid>
+                <div style="text-align: right">
                 <br />
-                <h:commandLink action="#{taskController.destroyAndView}" value="#{bundle.ViewTaskDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewTaskEditLink}"/>
-                <br />
-                <h:commandLink action="#{taskController.prepareCreate}" value="#{bundle.ViewTaskCreateLink}" />
-                <br />
-                <h:commandLink action="#{taskController.prepareList}" value="#{bundle.ViewTaskShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewTaskIndexLink}"/>
+                <button >
+                <h:commandLink style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: red;" action="#{taskController.destroyAndView}" value="#{bundle.ViewTaskDestroyLink}"/>
+                </button>
+                <button class="button">
+                <h:link style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" outcome="Edit" value="#{bundle.ViewTaskEditLink}"/>
+                </button>
+                <button class="button">
+                <h:commandLink style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" action="#{taskController.prepareCreate}" value="#{bundle.ViewTaskCreateLink}" />
+                </button>
+                <br/>
+                <br/>
+                <button class="button">
+                <h:commandLink style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" action="#{taskController.prepareList}" value="#{bundle.ViewTaskShowAllLink}"/>
+                </button>
+                <button class="button">
+                <h:link style="text-align: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: blue;" outcome="/index" value="#{bundle.ViewTaskIndexLink}"/>
+                </button>
+                </div>
 
             </h:form>
         </ui:define>
